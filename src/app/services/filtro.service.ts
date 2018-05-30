@@ -13,7 +13,7 @@ export class FiltroService {
     return FiltroService.instance = FiltroService.instance || this;
    }
 
-   public static hetInstance(){
+   public static getInstance(){
      if(this.instance == null){
        this.instance = new FiltroService();
      }
