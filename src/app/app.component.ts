@@ -20,5 +20,10 @@ export class AppComponent {
       show => this.showTemplate = show
     )
   }
-  title = 'app';
+  
+  showContentWrapper() {
+    return {
+       'content-wrapper' : this.filtro.isLoggedIn()
+    }
+  }
 }

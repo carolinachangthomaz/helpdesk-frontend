@@ -1,3 +1,4 @@
+import { HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FiltroService } from './services/filtro.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
@@ -12,6 +13,8 @@ import { routes } from './app.routes';
 import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { LoginInterceptor } from './components/security/login.interceptor';
+import { LoginGuard } from './components/security/login.guard';
 
 @NgModule({
   declarations: [
@@ -26,9 +29,19 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    routes
+    routes,
+    
   ],
-  providers: [UserService,FiltroService],
+  providers: [
+    UserService,
+    FiltroService,
+    LoginGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LoginInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,7 +1,6 @@
 <app-header  [hidden]="!showTemplate"></app-header>
 <app-menu [hidden]="!showTemplate"></app-menu>
-<div class="content-wrapper">
-    <!-- Content Header (Page header) -->
+<div [ngClass]="showContentWrapper()">
     <section class="content-header">
     </section>
     <section class="content">
