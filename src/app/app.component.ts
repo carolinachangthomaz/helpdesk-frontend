@@ -1,3 +1,4 @@
+import { FiltroService } from './services/filtro.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+  showTemplate: boolean =false;
+  public filtro: FiltroService;
+
+  constructor() { 
+    this.filtro = FiltroService.getInstance();
+  }
+
+  ngOnInit() {
+    this.filtro.showTemplate.subscribe(
+      show => this.showTemplate = show
+    )
+  }
   title = 'app';
 }

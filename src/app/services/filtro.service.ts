@@ -1,6 +1,5 @@
 import { User } from './../model/user.model';
-import { Injectable } from '@angular/core';
-import {EventEmitter} from '@angular/core/src/event_emitter';
+import { Injectable, EventEmitter } from '@angular/core';
 
 @Injectable()
 export class FiltroService {
