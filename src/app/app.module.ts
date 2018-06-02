@@ -15,6 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LoginInterceptor } from './components/security/login.interceptor';
 import { LoginGuard } from './components/security/login.guard';
+import { UserNewComponent } from './components/user-new/user-new.component';
+import { UserListComponent } from './components/user-list/user-list.component';
+import { DialogService } from './dialog.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,9 @@ import { LoginGuard } from './components/security/login.guard';
     MenuComponent,
     FooterComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    UserNewComponent,
+    UserListComponent
   ],
   imports: [
     BrowserModule,
@@ -34,8 +39,9 @@ import { LoginGuard } from './components/security/login.guard';
   ],
   providers: [
     UserService,
-    FiltroService,
     LoginGuard,
+    FiltroService,
+    DialogService,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: LoginInterceptor,
