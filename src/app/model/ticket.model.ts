@@ -7,6 +7,7 @@ export class Ticket{
        public titulo: string,
        public status: string,
        public prioridade: string,
+       public descricao: string,
        public image: string,
        public user: User,
        public usuarioDesignado: User,

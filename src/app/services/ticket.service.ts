@@ -12,11 +12,11 @@ export class TicketService {
 
   createOrUpdate(ticket: Ticket){
     if(ticket.id != null && ticket.id != ''){
-      return this.http.put('${HELP_DESK_API}/tickets', ticket);
+      return this.http.put(`${HELP_DESK_API}/tickets`, ticket);
     }else{
       ticket.id = null;
       ticket.status = 'Novo';
-      return this.http.post('${HELP_DESK_API}/tickets', ticket);
+      return this.http.post(`${HELP_DESK_API}/tickets`, ticket);
     }
   }
 
