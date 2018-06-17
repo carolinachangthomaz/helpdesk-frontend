@@ -8,6 +8,7 @@ import { componentFactoryName } from '@angular/compiler';
 import { ModuleWithProviders } from '@angular/core';
 import { UserNewComponent } from './components/user-new/user-new.component';
 import { TicketNewComponent } from './components/ticket-new/ticket-new.component';
+import { TicketListComponent } from './components/ticket-list/ticket-list.component';
 
 export const ROUTES: Routes =[
      {path: 'login', component: LoginComponent},
@@ -15,7 +16,9 @@ export const ROUTES: Routes =[
      { path: 'user-new' , component: UserNewComponent, canActivate:  [LoginGuard] },
      { path: 'user-new/:id' , component: UserNewComponent, canActivate:  [LoginGuard] },
      { path: 'user-list' , component: UserListComponent, canActivate:  [LoginGuard] },
-     { path: 'ticket-new' , component: TicketNewComponent, canActivate:  [LoginGuard] }
+     { path: 'ticket-new' , component: TicketNewComponent, canActivate:  [LoginGuard] },
+     { path: 'ticket-new/:id' , component: TicketNewComponent, canActivate:  [LoginGuard] },
+     { path: 'ticket-list' , component: TicketListComponent, canActivate:  [LoginGuard] }
 ]
 
 export const routes: ModuleWithProviders = RouterModule.forRoot(ROUTES);

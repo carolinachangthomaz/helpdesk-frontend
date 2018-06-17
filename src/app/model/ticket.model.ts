@@ -9,7 +9,7 @@ export class Ticket{
        public prioridade: string,
        public descricao: string,
        public image: string,
-       public user: User,
+       public usuario: User,
        public usuarioDesignado: User,
        public data: string,
        public listStatusAlteracao: Array<string>
