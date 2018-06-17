@@ -1,7 +1,7 @@
 <aside class="main-sidebar">
   <section class="sidebar">
      <ul class="sidebar-menu" data-widget="tree">
-      <li class="treeview">
+      <li class="treeview" *ngIf="filtro.user.proFile == 'ADMIN'">
         <a href="#">
           <i class="fa fa-edit"></i> <span>Usuários</span>
           <span class="pull-right-container">
@@ -13,7 +13,7 @@
           <li><a [routerLink]="['/user-new']"><i class="fa fa-circle-o"></i>Novo Usuário</a></li>
         </ul>
       </li>
-      <li class="treeview">
+      <li class="treeview" *ngIf="filtro.user.proFile != 'ADMIN'">
         <a href="#">
           <i class="fa fa-edit"></i> <span>Ticket</span>
           <span class="pull-right-container">
@@ -22,7 +22,7 @@
         </a>
         <ul class="treeview-menu">
           <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i>List</a></li>
-          <li><a [routerLink]="['/ticket-new']"><i class="fa fa-circle-o"></i>New Ticket</a></li>
+          <li *ngIf="filtro.user.proFile == 'CUSTOMER'"><a [routerLink]="['/ticket-new']"><i class="fa fa-circle-o"></i>New Ticket</a></li>
         </ul>
       </li>
       <li class="treeview">
