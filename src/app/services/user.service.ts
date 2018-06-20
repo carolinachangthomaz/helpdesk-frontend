@@ -16,6 +16,7 @@ export class UserService {
     if(user.id != null && user.id != ''){
       return this.http.put(HELP_DESK_API+'/usuarios', user);
     }else{
+      user.id = null;
       return this.http.post(HELP_DESK_API+'/usuarios', user);
     }
   }

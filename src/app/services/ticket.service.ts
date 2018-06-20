@@ -35,7 +35,7 @@ export class TicketService {
   findByParans(page: number, count: number,designados:boolean,ticket: Ticket){
     ticket.numero = ticket.numero == 0 ? null : ticket.numero;
     ticket.titulo = ticket.titulo == 'uninformed' ? '' : ticket.titulo;
-    return this.http.get(`${HELP_DESK_API}/tickets/${page}/${count}/${ticket.numero}/${ticket.titulo}/${ticket.status}/${ticket.prioridade}/${designados}`);
+    return this.http.get(`${HELP_DESK_API}/tickets?page=${page}&count=${count}&numero=${ticket.numero}&titulo=${ticket.titulo}&status=${ticket.status}&prioridade=${ticket.prioridade}&designado=${designados}`);
   }
 
   alterarStatus(status: string, ticket: Ticket){
