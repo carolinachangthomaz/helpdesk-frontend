@@ -10,8 +10,8 @@ export class Ticket{
        public descricao: string,
        public image: string,
        public usuario: User,
-       public usuarioDesignado: User,
-       public data: string,
+       public assinaturaUsuario: User,
+       public date: string,
        public listStatusAlteracao: Array<string>
     ){}
 }

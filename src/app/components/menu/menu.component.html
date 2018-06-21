@@ -21,8 +21,8 @@
           </span>
         </a>
         <ul class="treeview-menu">
-          <li *ngIf="filtro.user.proFile == 'CUSTOMER'"><a [routerLink]="['/ticket-list']"><i class="fa fa-circle-o"></i>List</a></li>
-          <li *ngIf="filtro.user.proFile == 'CUSTOMER'"><a [routerLink]="['/ticket-new']"><i class="fa fa-circle-o"></i>New Ticket</a></li>
+          <li><a [routerLink]="['/ticket-list']"><i class="fa fa-circle-o"></i>List</a></li>
+          <li *ngIf="filtro.user.proFile != 'CUSTOMER'"><a [routerLink]="['/ticket-new']"><i class="fa fa-circle-o"></i>New Ticket</a></li>
         </ul>
       </li>
       <li class="treeview">
